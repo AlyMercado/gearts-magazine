@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/style.css">
+  <title>Read the magazine</title>
+</head>
+<body class="viewer">
+
+  <header class="viewer-top">
+    <div class="left"><a class="btn back" href="index.html" aria-label="Back to home">Return to Magazine</a><a class="brand" href="index.html" id="brand">Home</a></div>
+
+    <div class="tools">
+      <button class="btn" id="contents" aria-pressed="false" aria-controls="rail">Contents</button>
+      <span class="sep"></span>
+      <button class="btn" id="zoomout" aria-label="Zoom out">−</button>
+      <button class="btn" id="zoomreset" aria-label="Reset zoom">100%</button>
+      <button class="btn" id="zoomin" aria-label="Zoom in">+</button>
+      <span class="sep"></span>
+      <button class="btn" id="fullscreen">Fullscreen</button>
+    </div>
+  </header>
+
+  <div class="viewer-body">
+    <nav class="rail" id="rail" aria-label="Jump to section"></nav>
+
+    <div class="stage">
+      <button class="arrow" id="prev" aria-label="Previous page">←</button>
+      <button class="arrow" id="next" aria-label="Next page">→</button>
+
+      <div class="book-area" id="book-area">
+        <div class="book-holder" id="book-holder">
+          <div id="book"></div>
+        </div>
+      </div>
+
+      <div class="scrubber" id="scrubber"></div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/page-flip@2.0.7/dist/js/page-flip.browser.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script>document.getElementById("brand").textContent = MAGAZINE.title;</script>
+  <script src="js/flipbook.js"></script>
+</body>
+</html>
